@@ -1,0 +1,14 @@
+1) instalamos next UI
+2) encerramos la app (_app.tsx) en el Provider de next ui
+3)creamos la carpeta themes, el archivo darkTheme y pegamos el codio de next ui
+4) creamos la carpeta components, dentro la carpeta layout, pokemon y ui
+5) dentro de layout creamos el archivo, insertamos el codigo
+    - este va a envolver el index
+    - recibe children por lo tanto tenemos que especificarlo con tsx
+6) en la carpeta ui creamos el archivo NavBar
+7) agregamos codigo: usamos el componente Text de next ui, Image de next
+8) en next.config agregamos unas lineas de codigo que van a permitir que
+   podamos traer imagenes que no estan en nuestros archivo y vienen de paginas
+   que usan static generation. En ese codigo agregamos la url del sitio para que 
+   permita traerla 
+9)
