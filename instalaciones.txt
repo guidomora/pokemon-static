@@ -1,2 +1,3 @@
 npm install @nextui-org/react
+npm, i axios
 

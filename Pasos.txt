@@ -11,4 +11,18 @@
    podamos traer imagenes que no estan en nuestros archivo y vienen de paginas
    que usan static generation. En ese codigo agregamos la url del sitio para que 
    permita traerla 
-9)
+9) Vamos a cargar de forma estatica los pokemons. Creamos la carpeta api, dentro el archivo pokeApi.ts
+10) instalamos axios y creamos el codigo para traer los datos de la api
+11) en el index de pages usamos el componente de next getStaticProps lo creamos con el snippet
+12) hacemos la peticion get 
+13) copiamos toda la respuesta que teniamos en postman pegando la url entera de la pokeapi 
+14) creamos la carpeta interfaces y dentro el archivo pokemon-list 
+15) usamos quicktype ctrl + shift + p | escribimos el nombre que querramos de la interface
+16) nos devuelve una interface
+17) hacemos unos cambios en la interface
+18) en el index creamos una constante pokemons dentro del getStaticProps, donde indicamos
+    que la interface SmallPokemon y mapeamos la data de la api
+19) esta constante la pasamos como props
+20) en este mismo archivo index creamos otra interface llamada Props que va a tener como propiedad
+    pokemons que va a ser igual a SmallPokemon
+21) En el jsx mapeamos pokemons que viene como props para obtener los datos
