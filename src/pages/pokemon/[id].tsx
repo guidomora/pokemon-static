@@ -1,6 +1,7 @@
 import pokeApi from "@/api/pokeApi";
 import Layout from "@/components/Layout/Layout"
 import { Pokemon } from "@/interfaces/pokemon-full";
+import { toggleFavorite } from "@/utils/localFavorites";
 import { Button, Card, Container, Grid, Image, Text } from "@nextui-org/react";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 
@@ -11,8 +12,13 @@ interface Props {
 }
 
 const PokemonPage: NextPage<Props> = ({ pokemon }) => {
+
+    const onToggleFavorite = () => {
+        toggleFavorite(pokemon.id)
+    }
+
     return (
-        <Layout title="Algun pokemon">
+        <Layout title={pokemon.name}>
             <Grid.Container css={{ marginTop: "5px" }} gap={2} >
                 <Grid xs={12} sm={4}>
                     <Card isHoverable css={{ padding: "30px" }}>
@@ -29,7 +35,7 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
                 <Card>
                     <Card.Header css={{display:"flex", justifyContent:"space-between"}} >
                         <Text h1 transform="capitalize">{pokemon.name}</Text>
-                        <Button color="gradient" ghost>
+                        <Button color="gradient" ghost onPress={onToggleFavorite}>
                             Guardar en favoritos
                         </Button>
                     </Card.Header>
@@ -68,7 +74,7 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
         // paths: [
         //     {
         //         // los parametros tienen que conicidir con el id en este caso y tiene que ser
-        //         // string
+        //         // string si o si
         //         params: {id:"1"}
         //     }
         // ],

@@ -45,4 +45,29 @@ Argumentos por URL:
     de todo para indecar de que tipo son las props que va a recibir el componente
 30) en la peticion get cambiamos el link por el de un pokemon solo y le pasamos el nuevo id
     video 19.
-31)
+31) Le damos estilo a toda la pag
+32) Creamos la seccion de favoritos: pages > favorites > index.tsx
+---------------------------------------------------------------------------------------------
+
+Segunda etapa:
+
+1) utils > localFavorites.ts creamos una funcion que se va a encargar de subir los id al
+    localStorage
+2) importamos esa funcion y la incluimos en la funcion que va en el boton de onclick
+   y le pasamos el id
+3)
+4)
+5)
+6)
+7)
+8)
+9)
+10)
+11)
+12)
+13)
+14)
+15)
+16)
+17)
+18)
