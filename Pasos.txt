@@ -11,6 +11,9 @@
    podamos traer imagenes que no estan en nuestros archivo y vienen de paginas
    que usan static generation. En ese codigo agregamos la url del sitio para que 
    permita traerla 
+
+Carga de pokemons:
+
 9) Vamos a cargar de forma estatica los pokemons. Creamos la carpeta api, dentro el archivo pokeApi.ts
 10) instalamos axios y creamos el codigo para traer los datos de la api
 11) en el index de pages usamos el componente de next getStaticProps lo creamos con el snippet
@@ -26,3 +29,18 @@
 20) en este mismo archivo index creamos otra interface llamada Props que va a tener como propiedad
     pokemons que va a ser igual a SmallPokemon
 21) En el jsx mapeamos pokemons que viene como props para obtener los datos
+22) Creamos las cards con la info de los pokemones con Next UI
+23) Las cards las pasamos a otro componente pokemon > PokemonCard asi quedaba limpio el index
+
+Argumentos por URL:
+
+24) En la carpeta pages > pokemon > [id].tsx  el nombre va asi porque va a ser dinamico
+25) En PokemonCard usamos router y una funcion que manda el id por query
+26) En el archivo [id] vamos a tener que usar getStaticPaths y getStaticProps
+27) Generando las pags: creamos un array de 1 a 500, y lo pasamos al path y a los params
+    modificamos un poco la estructura debido al mapeo del array, la original esta comentada
+    o se puede ver con el snippet de getStaticPaths
+28) Creamos una interface nueva en interfaces > pokemon-full.ts con el quicktype
+29) usamos esa interface en la constante que hace la peticion get y en la interface creada arriba 
+    de todo para indecar de que tipo son las props que va a recibir el componente
+30) en la peticion get cambiamos el link por el de un pokemon solo y le pasamos el nuevo id

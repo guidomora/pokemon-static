@@ -1,6 +1,8 @@
 import pokeApi from "@/api/pokeApi"
 import Layout from "@/components/Layout/Layout"
+import PokemonCard from "@/components/pokemon/PokemonCard"
 import { PokemonsListResponse, SmallPokemon } from "@/interfaces/pokemon-list"
+import { Card, Grid, Row, Text } from "@nextui-org/react"
 import { NextPage, GetStaticProps } from 'next'
 
 
@@ -15,13 +17,11 @@ const HomePage: NextPage<Props> = ({pokemons}) => {
 
   return (
     <Layout title="Listado de Pokemons">
-      <ul>
+      <Grid.Container gap={2} justify="flex-start">
         {pokemons.map((pokemon) => (
-          <li key={pokemon.id}>
-            #{pokemon.id} - {pokemon.name}
-          </li>
+          <PokemonCard key={pokemon.id} pokemon={pokemon}/>
         ))}
-      </ul>
+      </Grid.Container>
     </Layout>
   )
 }
@@ -33,7 +33,7 @@ const HomePage: NextPage<Props> = ({pokemons}) => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
 
   // Agregamos la interface creada
-  const { data } = await pokeApi.get<PokemonsListResponse>("/pokemon?limit=1400")
+  const { data } = await pokeApi.get<PokemonsListResponse>("/pokemon?limit=500")
   console.log(data);
 
   // se lo pasamos como props al componentes de arriba
