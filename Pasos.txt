@@ -44,3 +44,5 @@ Argumentos por URL:
 29) usamos esa interface en la constante que hace la peticion get y en la interface creada arriba 
     de todo para indecar de que tipo son las props que va a recibir el componente
 30) en la peticion get cambiamos el link por el de un pokemon solo y le pasamos el nuevo id
+    video 19.
+31)
