@@ -1,7 +1,7 @@
 import Layout from '@/components/Layout/Layout'
+import FavoritePokemons from '@/components/pokemon/FavoritePokemons'
 import NoFavorites from '@/components/ui/NoFavorites'
 import { pokemons } from '@/utils/localFavorites'
-import { Container, Text, Image } from '@nextui-org/react'
 import React, { useEffect, useState } from 'react'
 
 const favorites = () => {
@@ -16,7 +16,9 @@ const favorites = () => {
 
   return (
     <Layout title='Pokemons - Favoritos'>
-      <NoFavorites />
+      {favoritePokemons.length === 0 ? (<NoFavorites />) :(
+        <FavoritePokemons pokemons={favoritePokemons}/>
+      )}
     </Layout>
     
   )

@@ -69,11 +69,13 @@ Segunda etapa:
 10) en favorites > id creamos un estado, usamos un useEffect y le al seter le 
     pasamos la funcion que retorna los pokemones del localStorage. No verificamos que se use
     en el lado del servidor ya que estamos unsando un useEffect (es otra de las formas de verificar)
-11)
-12)
-13)
-14)
-15)
+11) Listado de favoritos: pokemon > FavoriteCardPokemon.tsx va a tener cada 
+    card de cada pokemon 
+12) pokemon > FavoritePokemons.tsx va a tener el listado de los pokemones en favoritos
+13) en favorites > index creamos un condicional que muestra NoFavorites o FavoritePokemons
+14) Link: creamos una constante llamada router, esta l;lama al useRouter
+15) Creamos una funcion donde pusheamos el router al link con el id del pokemon
+    y llamamos a esa funcion en un onclick
 16)
 17)
 18)
