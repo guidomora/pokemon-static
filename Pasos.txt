@@ -51,14 +51,17 @@ Argumentos por URL:
 
 Segunda etapa:
 
-1) utils > localFavorites.ts creamos una funcion que se va a encargar de subir los id al
-    localStorage
+1) utils > localFavorites.ts creamos una funcion onToggleFavorite que se va a encargar de 
+    subir los id al localStorage
 2) importamos esa funcion y la incluimos en la funcion que va en el boton de onclick
    y le pasamos el id
-3)
-4)
-5)
-6)
+3) dentro de localFavorites creamos existPokemonInFavorites, una funcion que se va a encargar de 
+    devolvernos un booleano si el id se encuentra en el localStorage
+4) en [id] usamos un useState y le pasamos esa funcion como estado inicial
+5) en existPokemonInFavorites creamos un condicional que si el proceso se genera del
+    lado del servidor de false para que no genere errores con el backend de next
+6) en [id] a la funcion onToggleFavorite le agregamos el seter para que al dar click
+    cambie el valor del estado por el contrario
 7)
 8)
 9)

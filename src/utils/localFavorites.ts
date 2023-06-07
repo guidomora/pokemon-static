@@ -21,6 +21,18 @@ const toggleFavorite = (id: number) => {
     localStorage.setItem("favorites", JSON.stringify(favorites) )
 }
 
+const existPokemonInFavorites = (id: number):boolean => {
+
+    // si esto se genera del lado del servidor, devuelve false
+    if (typeof window === "undefined") return false;
+
+    const favorites : number[] = JSON.parse(localStorage.getItem("favorites") || "[]")
+
+    // si incluye regresa true y sino false
+    return favorites.includes(id);
+}
+
 export {
-    toggleFavorite
+    toggleFavorite,
+    existPokemonInFavorites
 }
