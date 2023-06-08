@@ -5,7 +5,7 @@ import { Pokemon } from "@/interfaces/pokemon-full";
 import { existPokemonInFavorites, toggleFavorite } from "@/utils/localFavorites";
 import { Button, Card, Container, Grid, Image, Text } from "@nextui-org/react";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
-
+import confetti from "canvas-confetti"
 
 
 interface Props {
@@ -20,6 +20,16 @@ const PokemonPage: NextPage<Props> = ({ pokemon }) => {
         toggleFavorite(pokemon.id)
         // setea el valor opuesto que tenga el isInFavorites
         setIsInFavorites(!isInFavorites)
+         if(isInFavorites) return;
+         confetti({
+            zIndex:999,
+            spread: 160,
+            angle: -100,
+            origin: {
+                x:1,
+                y:0
+            }
+         })
     }
 
     

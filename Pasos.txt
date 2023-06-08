@@ -76,6 +76,8 @@ Segunda etapa:
 14) Link: creamos una constante llamada router, esta l;lama al useRouter
 15) Creamos una funcion donde pusheamos el router al link con el id del pokemon
     y llamamos a esa funcion en un onclick
-16)
-17)
+16) Canva confetti: Como esta libreria no esta para TS al querer importarla nos sale un
+    error con una sugerencia para que ejecutemos npm install --save canvas-confetti
+    para instalarlo como una dependencia de desarrollo
+17) importamos la libreria y la usamos en la PokemonPage
 18)

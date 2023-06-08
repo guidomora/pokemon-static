@@ -1,3 +1,5 @@
 npm install @nextui-org/react
 npm, i axios
+npm install --save canvas-confetti
+npm install --save canvas-confetti
 

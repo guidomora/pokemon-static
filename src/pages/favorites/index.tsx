@@ -4,7 +4,7 @@ import NoFavorites from '@/components/ui/NoFavorites'
 import { pokemons } from '@/utils/localFavorites'
 import React, { useEffect, useState } from 'react'
 
-const favorites = () => {
+const Favorites = () => {
   const [favoritePokemons, setFavoritePokemons] = useState<number[]>([])
 
   useEffect(() => {
@@ -24,4 +24,4 @@ const favorites = () => {
   )
 }
 
-export default favorites
+export default Favorites
