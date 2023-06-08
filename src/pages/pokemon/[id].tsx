@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import pokeApi from "@/api/pokeApi";
+import {useState } from "react";
 import Layout from "@/components/Layout/Layout"
 import { Pokemon } from "@/interfaces/pokemon-full";
 import { existPokemonInFavorites, toggleFavorite } from "@/utils/localFavorites";
 import { Button, Card, Container, Grid, Image, Text } from "@nextui-org/react";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import confetti from "canvas-confetti"
+import { getPokemonInfo } from "@/utils/getPokemonInfo";
 
 
 interface Props {
@@ -106,14 +106,31 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
 // desestructuramos ctx (context) para obtener los params, que son los parametros (id) que
 // pasamos arriba en getStaticPaths
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-
+    
     const { id } = params as { id: string }
-    // Pokemon es la nueva interface creada
-    const { data } = await pokeApi.get<Pokemon>(`/pokemon/${id}`)
+    // -----------------------------------------------
+    // Sin centralizar la data del pokemon
+     
+    // // Pokemon es la nueva interface creada
+    // const { data } = await pokeApi.get<Pokemon>(`/pokemon/${id}`)
 
+    // const pokemon ={
+    //     id: data.id,
+    //     name: data.name,
+    //     sprites : data.sprites
+    //   }
+
+    // return {
+    //     props: {
+    //         pokemon
+    //     }
+    // }
+    // ----------------------------------------------------
+
+    // Utilizamos la funcion centralizada y le pasamos el id
     return {
         props: {
-            pokemon: data
+            pokemon: await getPokemonInfo(id)
         }
     }
 }

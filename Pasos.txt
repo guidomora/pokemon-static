@@ -62,6 +62,8 @@ Segunda etapa:
     lado del servidor de false para que no genere errores con el backend de next
 6) en [id] a la funcion onToggleFavorite le agregamos el seter para que al dar click
     cambie el valor del estado por el contrario
+
+
 7) Pantalla de favoritos: en ui > NoFavorites creamos todo el maquetado y sus estilos
 8) importamos NoFavorites a favorites > index para reducir el codigo
 9) En local favorites creamos una funcion pokemons que solo va a traer pokemones del
@@ -69,6 +71,8 @@ Segunda etapa:
 10) en favorites > id creamos un estado, usamos un useEffect y le al seter le 
     pasamos la funcion que retorna los pokemones del localStorage. No verificamos que se use
     en el lado del servidor ya que estamos unsando un useEffect (es otra de las formas de verificar)
+
+
 11) Listado de favoritos: pokemon > FavoriteCardPokemon.tsx va a tener cada 
     card de cada pokemon 
 12) pokemon > FavoritePokemons.tsx va a tener el listado de los pokemones en favoritos
@@ -80,4 +84,16 @@ Segunda etapa:
     error con una sugerencia para que ejecutemos npm install --save canvas-confetti
     para instalarlo como una dependencia de desarrollo
 17) importamos la libreria y la usamos en la PokemonPage
-18)
+
+
+18) Pokemon por nombre: pages > name > [name].tsx
+19) Es identico al componente de [id].tsx y ahora en la url si ponemos /name/nombre del pokemon
+    nos lleva a la card del pokemon
+
+
+20) Optimizar la data necesaria del pokemon: en pages > name > [name].tsx creamos una funcion
+    que solo trae los datos que vamos a utilizar. Aplicamos la misma funcion a [id].tsx
+    Esto a la hora de hacer el build reduce un monton el peso y tiempos de carga
+21)
+22)
+23)

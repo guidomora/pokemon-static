@@ -9,9 +9,9 @@ interface Props {
 const PokemonCard: FC<Props> = ({ pokemon }) => {
     const router =useRouter()
 
-    // Le mandamos la query al router y nos direcciona a la url con ese id
+    // Le mandamos la query al router y nos direcciona a la url con ese name
     const onCLick = () => {
-        router.push(`/pokemon/${pokemon.id}`)
+        router.push(`/name/${pokemon.name}`)
     }
 
 
