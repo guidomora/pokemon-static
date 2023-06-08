@@ -27,12 +27,12 @@ const PokemonCard: FC<Props> = ({ pokemon }) => {
                     />
                 </Card.Body>
                 <Card.Footer>
-                    <Row justify="space-between">
+                    <Grid justify="space-between">
                         <Text transform="capitalize">
                             {pokemon.name}
                         </Text>
                         #{pokemon.id}
-                    </Row>
+                    </Grid>
                 </Card.Footer>
             </Card>
         </Grid>
