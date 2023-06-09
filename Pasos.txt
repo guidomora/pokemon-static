@@ -94,6 +94,16 @@ Segunda etapa:
 20) Optimizar la data necesaria del pokemon: en pages > name > [name].tsx creamos una funcion
     que solo trae los datos que vamos a utilizar. Aplicamos la misma funcion a [id].tsx
     Esto a la hora de hacer el build reduce un monton el peso y tiempos de carga
-21)
-22)
-23)
+
+21) Centralizar la lectura del pokemon: utils > getPokemonInfo.ts
+22) Creamos una funcion que va a recibir el nombre o el id y a traves de la
+    api retorna el id, nombre y sprites que habiamos optimizado en el paso anterior
+
+23) Open Graph Meta Tags: son meta tags que hacen que sea mas SEO friendly 
+    a la hora de compartir nuestro sitio o secciones de nuestro sitio en redes sociales
+    Controlan como se ven las URL
+24) pegamos los meta tags copiados de Open Graph y les agregamos el title
+25) public > img > guardamos la imagen descargada ahi
+26) creamos una constante que nos va a devolver el dominio y se lo agregamos
+    con backticks a la url de la imagen
+
