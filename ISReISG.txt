@@ -1,0 +1,22 @@
+Incremental static regeneration e Incremental Static Generation
+
+
+Incremental site regeneration ISR: 
+    Le dice a next que una pagina se actualiza cada un determinado tiempo, sin que nosotros
+    lo hagamos manualmente. Por ejemplo que se regenere una pagina cada 24hs. Ayuda mucho a 
+    la velocidad, mantener info en cache
+
+
+Incremental static generation ISG:
+hacer una peticion, que quede guardada y que next en base a esa peticion cree una pagina
+en las siguientes 24hs por ejemplo.
+
+
+1) ISG: pages > pokemon > [id].tsx vamos a la parte de getStaticProps.
+2) en el return le agrwegamos revalidate y la cantidad de segundos.
+   se aclara que la pagina se va a "revalidar" cada cierto tiempo
+
+
+3) ISG: 
+4)
+5)
