@@ -12,11 +12,26 @@ hacer una peticion, que quede guardada y que next en base a esa peticion cree un
 en las siguientes 24hs por ejemplo.
 
 
-1) ISG: pages > pokemon > [id].tsx vamos a la parte de getStaticProps.
+
+1) ISR: pages > pokemon > [id].tsx vamos a la parte de getStaticProps.
 2) en el return le agrwegamos revalidate y la cantidad de segundos.
    se aclara que la pagina se va a "revalidar" cada cierto tiempo
 
 
-3) ISG: 
-4)
-5)
+3) ISG: En GetStaticProps ponemos el fallback a "blocking", creamos una constante
+   que tiene el await de getPokemonInfo() y ya no hace falta pasarla en el return
+   de las props
+4) En getPokemonInfo envolvemos el contenido en un trycatch y en el catch ponemos
+   return null
+5) Volvemos al get GetStaticProps y creamos un condicional que si el pokemon
+   no existe nos redireccione al home
+
+6) repetimos el mismo proceso para hacerlo con [name].tsx
+
+---------------------------------------------------------------
+
+Explicacion de esta seccion: en la app tiene hasta 500 pokemones, pero si buscan
+por id o nombre alguno que no esta generadod e forma estatica, lo va a traer
+y uuna vez pasadas 24hs se va a generar de forma estatica.
+Va incrementando el tamaño de la app.
+-----------------------------------------------------------

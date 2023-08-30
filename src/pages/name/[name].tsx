@@ -83,6 +83,8 @@ export const getStaticPaths: GetStaticPaths = async (ctx) => {
   // mapeamos data y solo nos llevamos los nombres
   const pokemonNames: string[] = data.results.map(pokemon => pokemon.name)
 
+  
+
   // mapeamos los nombres para pasarselo a params
   return {
     paths: pokemonNames.map(name => ({
@@ -96,6 +98,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Lo que voy a recibir es el name ([name].tsx --> name)
   const { name } = params as { name: string }
 
+  // Explicacion en [id].tsx
+  const pokemon = await getPokemonInfo(name.toLocaleLowerCase())
+
+  if (!pokemon) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false
+      }
+    }
+  }
 
   // -------------------------------------------------------
   // El name que recibimos se lo pasamos a la url de la api
@@ -113,10 +126,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // aunque tambien podriamos poner pokemon:pokemon
   // ---------------------------------------------------------
 
+  // Antes del ISR
+  // return {
+  //   props: {
+  //     pokemon: await getPokemonInfo(name)
+  //   }
+  // }
+  // ------------------------------
+
   return {
     props: {
-      pokemon: await getPokemonInfo(name)
-    }
+      pokemon
+    },
+    revalidate: 86400
   }
 }
 

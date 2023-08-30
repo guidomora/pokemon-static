@@ -143,7 +143,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // }
     // ----------------------------------------------------
 
-    // Antes del ISG
+    // Antes del ISR
     // Utilizamos la funcion centralizada y le pasamos el id
     // return {
     //     props: {
